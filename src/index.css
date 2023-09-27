@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Caveat&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-color: #f8f6f6;
+  --bg-color: #1e262c;
+  --main-color: #d79106;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.font-alegreya {
+  font-family: 'Alegreya', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
