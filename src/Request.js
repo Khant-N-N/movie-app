@@ -1,5 +1,5 @@
 
-const key = "39d55cfb7a255ff32ed452c4e8a5fde5";
+const key = import.meta.env.VITE_MOVIEDB_API_KEY;
 const url = "https://api.themoviedb.org/3";
 
 const requests = {
