@@ -6,12 +6,14 @@ const useAxios = (url) => {
   const [loading, setLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
+    setLoading(true);
+    setMovies([]);
     try {
       const response = await axios.get(url);
       setMovies(response.data.results);
       setLoading(false);
     } catch (error) {
-      console.log("error in fetch data", err);
+      console.log("error in fetch data", error);
     }
   }, [url]);
 

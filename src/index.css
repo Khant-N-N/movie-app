@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Caveat&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,8 +11,10 @@
 }
 
 body {
+  scroll-behavior: smooth;
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Young Serif', cursive, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .font-alegreya {

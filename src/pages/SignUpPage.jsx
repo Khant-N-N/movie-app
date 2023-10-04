@@ -7,7 +7,7 @@ const SignUpPage = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signUp, user } = UseAuth();
+  const { signUp } = UseAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -39,7 +39,7 @@ const SignUpPage = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="flex gap-2 rounded shadow-[1px_2px_2px_#111] border border-[var(--main-color)] md:w-[50%] w-[80%] h-[70%] flex-col justify-center items-center"
+          className="flex gap-2 rounded shadow-[1px_2px_2px_#111] border border-[var(--main-color)] max-w-[500px] md:w-[50%] w-[90%] h-[70%] flex-col justify-center items-center"
         >
           <p className="text-[2rem] font-caveat mb-[2rem] text-center px-2">
             Create an Account for more features
@@ -47,7 +47,7 @@ const SignUpPage = () => {
           {error && <div className="mb-3 text-[#f04141]">{error}</div>}
           <input
             type="email"
-            className="w-[80%] text-black lg:w-[60%] h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
+            className="w-[90%] text-black lg:w-[60%] h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
             placeholder="Enter Your Email"
             autoComplete="current-email"
             ref={emailRef}
@@ -55,14 +55,14 @@ const SignUpPage = () => {
           />
           <input
             type="password"
-            className="w-[80%] text-black  lg:w-[60%] h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
+            className="w-[90%] text-black  lg:w-[60%] h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
             placeholder="Enter password"
             ref={passwordRef}
             required
           />
           <input
             type="password"
-            className="w-[80%] text-black lg:w-[60%] h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
+            className="w-[90%] text-black lg:w-[60%] h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
             placeholder="Confirm your password"
             ref={passwordConfirmRef}
             required
@@ -70,7 +70,7 @@ const SignUpPage = () => {
           <button
             disabled={loading}
             type="submit"
-            className="py-2 bg-[var(--main-color)] h-[2.6rem] lg:w-[60%] w-[80%] rounded-md  active:opacity-80"
+            className="py-2 bg-[var(--main-color)] h-[2.6rem] lg:w-[60%] w-[90%] rounded-md  active:opacity-80"
           >
             SignUp
           </button>
@@ -80,7 +80,7 @@ const SignUpPage = () => {
               to="/signIn"
               className="text-[var(--main-color)] hover:opacity-80"
             >
-              Sign in
+              SignIn
             </NavLink>
           </p>
         </form>

@@ -31,7 +31,7 @@ const SignInPage = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="flex gap-2 rounded shadow-[1px_2px_2px_#111] border border-[var(--main-color)] md:w-[50%] w-[80%] h-[70%] flex-col justify-center items-center"
+          className="flex gap-2 rounded shadow-[1px_2px_2px_#111] border border-[var(--main-color)] max-w-[500px] md:w-[50%] w-[90%] h-[70%] flex-col justify-center items-center"
         >
           <p className="text-[2rem] font-caveat text-center mb-[2rem]">
             Welcome back!
@@ -41,25 +41,25 @@ const SignInPage = () => {
             type="email"
             ref={emailRef}
             id="signinemail"
-            className="w-[80%] lg:w-[60%] text-black h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
+            className="w-[90%] lg:w-[60%] text-black h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
             placeholder="Enter Your Email"
             required
           />
           <input
             type="password"
             ref={passwordRef}
-            className="w-[80%] lg:w-[60%] text-black  h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
+            className="w-[90%] lg:w-[60%] text-black  h-[3rem] mb-3 rounded-md px-2 py-1 outline-[var(--main-color)]"
             placeholder="Password"
             required
           />
-          <p className="text-left w-[80%] lg:w-[60%] ">
+          <p className="text-left w-[90%] lg:w-[60%] ">
             <input type="checkbox" name="remember" /> Remember Me
           </p>
           <button
             type="submit"
-            className="py-2 bg-[var(--main-color)]  h-[2.6rem] lg:w-[60%] w-[80%] rounded-md  active:opacity-80"
+            className="py-2 bg-[var(--main-color)]  h-[2.6rem] lg:w-[60%] w-[90%] rounded-md  active:opacity-80"
           >
-            Login
+            SignIn
           </button>
           <p className="my-1">
             Havn't Here Before?{" "}
