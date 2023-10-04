@@ -43,6 +43,7 @@ const SearchBox = () => {
     if (e.key === "Enter") {
       navigate(`/searchShows/${keyword}/1`);
       setIsType(false);
+      window.scrollTo(0, 0);
     }
   };
   return (
@@ -68,9 +69,10 @@ const SearchBox = () => {
       )}
       {isType && (
         <div className="w-full bg-black rounded-b max-h-[20rem] shadow-lg px-1 gap-y-2 absolute flex flex-col overflow-y-scroll scrollbar-hide z-[99]">
-          {detail?.results?.length === 0 && (
-            <div className="text-center py-3">No results</div>
-          )}
+          {detail?.results?.length === 0 &&
+            searchBoxRef.current.value !== "" && (
+              <div className="text-center py-3">No results</div>
+            )}
           {detail?.results?.map((show, id) => {
             return (
               <Link
