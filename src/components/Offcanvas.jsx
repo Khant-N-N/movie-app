@@ -10,7 +10,7 @@ const Offcanvas = ({ setOffcanvas, offcanvas }) => {
   return (
     <div
       className={`${
-        offcanvas ? "right-0" : "right-[-300px]"
+        offcanvas ? "right-[-10px] top-[-10px]" : "right-[-350px]"
       } md:hidden h-[100vh] w-[300px] bg-[black]/90 absolute top-0 right-0 flex flex-col items-center transition-all duration-300 z-[9999]`}
     >
       <FaX

@@ -14,7 +14,7 @@ body {
   scroll-behavior: smooth;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Young Serif', cursive, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Young Serif', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .font-alegreya {
