@@ -81,6 +81,7 @@ const Movie = ({ detail }) => {
             className="w-full h-auto rounded"
             src={`https://image.tmdb.org/t/p/w500/${detail?.poster_path}`}
             alt={detail?.title || detail?.name}
+            loading="lazy"
           />
         )}
       </div>

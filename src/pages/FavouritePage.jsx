@@ -46,7 +46,7 @@ const FavouritePage = () => {
         </p>
       </div>
       {user ? (
-        <div className="flex flex-wrap mx-5 justify-center">
+        <div className="flex flex-wrap justify-center">
           {selectSeries
             ? series?.length === 0 && (
                 <div className="w-full h-[20rem] justify-center flex-col flex items-center text-[1.2rem] text-center animate-pulse">

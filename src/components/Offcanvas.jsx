@@ -38,11 +38,7 @@ const Offcanvas = ({ setOffcanvas, offcanvas }) => {
       >
         Series
       </NavLink>
-      <NavLink
-        onClick={handleClick}
-        to="/contactus"
-        className="mt-5 hover:text-[#d79106]/80"
-      >
+      <NavLink onClick={handleClick} className="mt-5 hover:text-[#d79106]/80">
         Contact Us
       </NavLink>
     </div>

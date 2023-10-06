@@ -30,7 +30,7 @@ const MoviePath = ({ topic, ids, fetchData }) => {
         <span>{topic}</span>{" "}
         <Link
           to="/allmovies"
-          className="text-[0.8rem] pt-3 text-[var(--main-color)] md:text-[1.2rem]"
+          className="text-[1.1rem] pt-3 text-[var(--main-color)] md:text-[1.2rem]"
         >
           see more
         </Link>

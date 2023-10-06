@@ -1,6 +1,6 @@
 import React from "react";
 import requests from "../Request";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetchSingle from "../hooks/useFetchSingle";
 import {
   FaC,
@@ -50,7 +50,15 @@ const Recommendation = ({ type }) => {
           className="flex overflow-x-scroll scroll-smooth scrollbar-hide mx-3"
         >
           {detail?.results?.length === 0 ? (
-            <span className="opacity-80">No recommendation found</span>
+            <p className="opacity-80">
+              No recommendation found{" "}
+              <Link
+                className="text-[var(--main-color)] mx-2"
+                to={type === "tv" ? "/allseries" : "/allmovies"}
+              >
+                see others
+              </Link>
+            </p>
           ) : (
             detail?.results?.map((item) => {
               return <Movie detail={item} key={item.id} />;

@@ -26,7 +26,6 @@ const useFetchSingle = (url) => {
       const response = await axios.get(urls);
       setDetail(response.data);
       setLoading(false);
-      console.log(response.data);
       setRunTime(
         runTimeCalculate(
           response.data.runtime || response.data.episode_run_time?.[0]

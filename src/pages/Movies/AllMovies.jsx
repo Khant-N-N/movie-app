@@ -28,7 +28,7 @@ const AllMovies = () => {
         />
       </div>
       <h3 className="text-[1.5rem] px-3">Browse All Movies:</h3>
-      <div className="flex flex-wrap px-6 justify-center mt-4">
+      <div className="flex flex-wrap justify-center mt-4">
         {loading ? (
           <div className="w-full h-[70vh] flex justify-center items-center">
             <FaC className="animate-spin text-center text-[2rem]" />

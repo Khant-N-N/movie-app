@@ -51,9 +51,9 @@ const SearchedShowPage = () => {
         )}
       </div>
       {detail?.results?.length === 0 && (
-        <div className="text-center my-[4rem]">No results Found!</div>
+        <div className="text-center h-[200px] my-[4rem]">No results Found!</div>
       )}
-      <div className="flex justify-center gap-x-2">
+      <div className="flex justify-center gap-x-2 min-h-[200px]">
         {page !== 1 && (
           <div className="flex justify-center">
             <div

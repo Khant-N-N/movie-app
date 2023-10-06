@@ -3,14 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import { UseAuth } from "../contexts/AuthContext";
 import { FaMagnifyingGlass, FaUser, FaX } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
-import AccountPage from "../pages/AccountPage";
 import SearchBox from "./SearchBox";
 import Offcanvas from "./Offcanvas";
 
 const NavBar = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [scroll, setScroll] = useState(false);
-  const [accountDisplay, setAccountDisplay] = useState(false);
   const [searchClick, setSearchClick] = useState(false); //searchbox display on click for under md screen
   const [bg, setBg] = useState(true);
   const [offcanvas, setOffcanvas] = useState(false);
@@ -127,16 +125,17 @@ const NavBar = () => {
         <Offcanvas setOffcanvas={setOffcanvas} offcanvas={offcanvas} />
 
         {user?.email ? (
-          <li className="relative justify-end hidden md:flex">
-            <div
-              onClick={() => setAccountDisplay(!accountDisplay)}
-              className="bg-[var(--main-color)] cursor-pointer px-[1.3rem] py-[.3rem] rounded hover:bg-[#d79150] active:scale-[0.9]"
-            >
+          <NavLink
+            to="/account"
+            className={({ isActive }) =>
+              isActive ? "text-black md:block hidden" : "md:block hidden"
+            }
+          >
+            <div className="bg-[var(--main-color)] cursor-pointer px-[1.3rem] py-[.3rem] rounded hover:bg-[#d79150] active:scale-[0.9]">
               <FaUser className="inline mb-1 mr-1 " />
               <span className="hidden md:inline"> Account</span>
             </div>
-            {accountDisplay ? <AccountPage /> : null}
-          </li>
+          </NavLink>
         ) : (
           <>
             <NavLink

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import requests from "../../Request";
 import { AiOutlinePlayCircle } from "react-icons/ai";
-import { FaC, FaHeart, FaRegHeart } from "react-icons/fa6";
+import { FaC, FaHeart, FaRegHeart, FaStar } from "react-icons/fa6";
 import useFetchSingle from "../../hooks/useFetchSingle";
 import { UseAuth } from "../../contexts/AuthContext";
 import { db } from "../../firebase";
@@ -107,6 +107,9 @@ const SeriesDetails = () => {
               <p className="italic text-[0.8rem] my-2">
                 Run Time : {runTime} per ep
               </p>
+              <p className="italic my-2 flex text-[var(--main-color)]">
+                <FaStar className="mr-2 mt-[.1rem]" /> {detail?.vote_average}
+              </p>
               <p className="max-h-[7rem] overflow-scroll p-2 rounded hover:border scrollbar-hide opacity-70">
                 {detail?.overview}
                 {detail?.overview === "" && (
@@ -168,10 +171,13 @@ const SeriesDetails = () => {
                     <FaRegHeart className="text-[1.5rem] drop-shadow-[0_0_2px_black]" />
                   </div>
                 )}
-                <div className="my-2 flex rounded-[25px] border border-[var(--text-color)] px-3 py-2 cursor-pointer drop-shadow-[0px_0px_1px_black] bg-[var(--main-color)] hover:opacity-90 active:scale-[0.9]">
+                <a
+                  href="#trailer"
+                  className="my-2 flex rounded-[25px] border border-[var(--text-color)] px-3 py-2 cursor-pointer drop-shadow-[0px_0px_1px_black] bg-[var(--main-color)] hover:opacity-90 active:scale-[0.9]"
+                >
                   <AiOutlinePlayCircle className="text-[1.5rem] mr-2 hover:text-[var(--main-color)] drop-shadow-[0_0_2px_black]" />
-                  <span className="text-[1rem]">Watch Now</span>
-                </div>
+                  <span className="text-[1rem]">Watch Trailer</span>
+                </a>
               </div>
             </div>
           </div>

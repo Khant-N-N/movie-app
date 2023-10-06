@@ -2,6 +2,7 @@ const key = import.meta.env.VITE_TMDB_API_KEY;
 const url = "https://api.themoviedb.org/3";
 
 const requests = {
+  requestVideos: (type, id) => `${url}/${type}/${id}/videos?api_key=${key}`,
   requestSearch: (keyword, page) => `${url}/search/multi?api_key=${key}&query=${keyword}&page=${page}`,
   requestDiscover: (type, page) => `${url}/discover/${type}?api_key=${key}&page=${page}`,
   requestTrending: (type) => `${url}/trending/${type}/week?api_key=${key}`,
