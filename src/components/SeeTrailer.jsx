@@ -1,62 +1,53 @@
 import React from "react";
 import useFetchSingle from "../hooks/useFetchSingle";
 import requests from "../Request";
-import {
-  FaC,
-  FaCircleChevronLeft,
-  FaCircleChevronRight,
-} from "react-icons/fa6";
-import useScrollBar from "../hooks/useScrollBar";
+import { FaC, FaX } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 
-const SeeTrailer = ({ type }) => {
+const SeeTrailer = ({ type, watch, setWatch }) => {
   const { id } = useParams();
   const { detail, loading } = useFetchSingle(requests.requestVideos(type, id));
-  const {
-    disableLeft,
-    disableRight,
-    handleScroll,
-    handleScrollRight,
-    handleScrollLeft,
-  } = useScrollBar("video");
-
   return (
     <div
       id="trailer"
-      className="mt-[5rem] mb-[4rem] w-[90%] md:w-[70%] group mx-auto px-4 relative"
+      className={`${
+        watch ? "scale-100" : "scale-0"
+      } w-[90%] transition-all md:w-[50%] max-h-[27rem] overflow-scroll z-[9] p-7 rounded absolute bg-black/90 top-[25%] left-[4%] md:left-[10%]`}
     >
-      <FaCircleChevronLeft
-        onClick={handleScrollLeft}
-        className={`${
-          disableLeft ? "text-[#7d8185]/80" : ""
-        } select-none left-2 top-[45%] text-[2rem] absolute cursor-pointer z-10 hidden group-hover:block`}
-      />
-      <FaCircleChevronRight
-        onClick={handleScrollRight}
-        className={`${
-          disableRight ? "text-[#7d8185]/80" : ""
-        } select-none right-2 top-[45%] text-[2rem] absolute cursor-pointer z-10 hidden group-hover:block`}
-      />
-      <div
-        id="video"
-        onScroll={handleScroll}
-        className="flex overflow-x-scroll gap-x-[2rem] scrollbar-hide scroll-smooth"
-      >
-        {loading ? (
-          <div className="mt-[8rem] mb-[4rem] w-[19rem] md:w-[50rem] sm:w-[30rem] flex justify-center items-center">
-            <FaC className="animate-spin text-center text-[2rem]" />
-          </div>
-        ) : (
-          detail?.results?.map((video, id) => (
-            <iframe
-              key={id + 1}
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${video.key}`}
-            ></iframe>
-          ))
-        )}
+      <div className="relative">
+        <FaX
+          onClick={() => setWatch(false)}
+          className="absolute top-[-1rem] right-0"
+        />
       </div>
+      <h3 className="text-center mb-3">Click Links to see Videos</h3>
+      {loading ? (
+        <div className="mt-[8rem] mb-[4rem] w-[19rem] md:w-[50rem] sm:w-[30rem] flex justify-center items-center">
+          <FaC className="animate-spin text-center text-[2rem]" />
+        </div>
+      ) : (
+        detail?.results?.map((video, id) => (
+          <div key={id} className="mb-3">
+            <a
+              className="flex text-[var(--main-color)] underline"
+              target="_blank"
+              href={`https://www.youtube.com/embed/${video.key}`}
+            >
+              <span className="mr-2">{id + 1}.</span>
+              <span>
+                {" "}
+                {video.name} ({video.type})
+              </span>
+            </a>
+          </div>
+          // <iframe
+          //   key={id + 1}
+          //   width="560"
+          //   height="315"
+          //   src={`https://www.youtube.com/embed/${video.key}`}
+          // ></iframe>
+        ))
+      )}
     </div>
   );
 };

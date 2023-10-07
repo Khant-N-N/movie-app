@@ -10,12 +10,14 @@ import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useRemoveShow from "../../hooks/useRemoveShow";
+import SeeTrailer from "../../components/SeeTrailer";
 
 const SeriesDetails = () => {
   const { id } = useParams();
   const { user } = UseAuth();
   const { removeShow, series } = useRemoveShow();
   const [save, setSave] = useState(false);
+  const [watch, setWatch] = useState(false);
   const { detail, loading, runTime } = useFetchSingle(
     requests.request_details(id, "tv")
   );
@@ -73,6 +75,7 @@ const SeriesDetails = () => {
         </div>
       ) : (
         <div className="w-full relative">
+          <SeeTrailer type="tv" watch={watch} setWatch={setWatch} />
           <div className="w-full h-[70vh]">
             <div className="w-full h-[70vh] absolute bg-gradient-to-t from-[var(--bg-color)] to-black/50"></div>
             {detail?.backdrop_path && (
@@ -171,13 +174,16 @@ const SeriesDetails = () => {
                     <FaRegHeart className="text-[1.5rem] drop-shadow-[0_0_2px_black]" />
                   </div>
                 )}
-                <a
-                  href="#trailer"
+                <div
+                  onClick={() => {
+                    setWatch(true);
+                    window.scrollTo(0, 0);
+                  }}
                   className="my-2 flex rounded-[25px] border border-[var(--text-color)] px-3 py-2 cursor-pointer drop-shadow-[0px_0px_1px_black] bg-[var(--main-color)] hover:opacity-90 active:scale-[0.9]"
                 >
                   <AiOutlinePlayCircle className="text-[1.5rem] mr-2 hover:text-[var(--main-color)] drop-shadow-[0_0_2px_black]" />
                   <span className="text-[1rem]">Watch Trailer</span>
-                </a>
+                </div>
               </div>
             </div>
           </div>

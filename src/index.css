@@ -9,6 +9,14 @@
   --main-color: #d79106;
 }
 
+/* Hide the number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
 body {
   scroll-behavior: smooth;
   background-color: var(--bg-color);

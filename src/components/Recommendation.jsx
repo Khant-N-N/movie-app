@@ -38,7 +38,15 @@ const Recommendation = ({ type }) => {
           disableRight ? "text-[#7d8185]/80" : ""
         } select-none right-2 top-[45%] text-[2rem] absolute cursor-pointer z-10 hidden group-hover:block`}
       />
-      <h3>Recommedations: </h3>
+      <h3>
+        Recommedations:{" "}
+        <Link
+          to={type === "movie" ? "/allmovies" : "/allseries"}
+          className="text-[1.1rem] pt-3 text-[var(--main-color)] md:text-[1.2rem]"
+        >
+          see more
+        </Link>
+      </h3>
       {loading ? (
         <div className="mt-[8rem] mb-[4rem] w-[19rem] md:w-[50rem] sm:w-[30rem] flex justify-center items-center">
           <FaC className="animate-spin text-center text-[2rem]" />

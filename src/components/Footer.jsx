@@ -10,17 +10,23 @@ const Footer = () => {
       >
         <div className="w-[9rem] h-[10rem] flex flex-col">
           <p className="text-[var(--main-color)] text-lg font-bold">Path</p>
-          <Link className="hover:text-[var(--main-color)]">Home</Link>
-          <Link className="hover:text-[var(--main-color)]">About us</Link>
+          <Link to="/" className="hover:text-[var(--main-color)]">
+            Home
+          </Link>
+          <Link to="/allmovies" className="hover:text-[var(--main-color)]">
+            Movies
+          </Link>
+          <Link to="/allseries" className="hover:text-[var(--main-color)]">
+            Series
+          </Link>
           <Link className="hover:text-[var(--main-color)]">Contact us</Link>
-          <Link className="hover:text-[var(--main-color)]">Movies</Link>
         </div>
         <div className="w-[9rem] h-[10rem] flex flex-col">
           <p className="text-[var(--main-color)] text-lg font-bold">
             Top Categories
           </p>
           <Link className="hover:text-[var(--main-color)]">Action</Link>
-          <Link className="hover:text-[var(--main-color)]">Romantic</Link>
+          <Link className="hover:text-[var(--main-color)]">Romance</Link>
           <Link className="hover:text-[var(--main-color)]">Drama</Link>
           <Link className="hover:text-[var(--main-color)]">Horror</Link>
         </div>

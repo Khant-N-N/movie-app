@@ -12,7 +12,6 @@ const SearchedShowPage = () => {
   const { detail, loading } = useFetchSingle(
     requests.requestSearch(keyword, page)
   );
-
   useEffect(() => {
     detail?.results && setAllShows([...detail.results]);
     if (detail?.results?.length === 0) {
@@ -53,7 +52,7 @@ const SearchedShowPage = () => {
       {detail?.results?.length === 0 && (
         <div className="text-center h-[200px] my-[4rem]">No results Found!</div>
       )}
-      <div className="flex justify-center gap-x-2 min-h-[200px]">
+      <div className="flex justify-center gap-x-2 my-5">
         {page !== 1 && (
           <div className="flex justify-center">
             <div
@@ -64,6 +63,9 @@ const SearchedShowPage = () => {
             </div>
           </div>
         )}
+        <div className="mt-2">
+          {page}/{detail?.total_pages}
+        </div>
         {detail?.total_pages !== page && (
           <div className="flex justify-center">
             <div

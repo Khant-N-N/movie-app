@@ -65,6 +65,7 @@ const FavouritePage = () => {
                   <div key={id} className="mx-2 my-3 shadow w-[9rem]">
                     <div className="w-[9rem] relative cursor-pointer">
                       <Link
+                        onClick={() => window.scrollTo(0, 0)}
                         to={`/allmovies/${movie.id}`}
                         className="w-full h-full flex justify-center items-center absolute bg-black/80 opacity-0 hover:opacity-100"
                       >
@@ -94,6 +95,7 @@ const FavouritePage = () => {
                   <div key={id} className="mx-2 my-3 shadow w-[9rem]">
                     <div className="w-[9rem] relative cursor-pointer">
                       <Link
+                        onClick={() => window.scrollTo(0, 0)}
                         to={`/allseries/${series.id}`}
                         className="w-full h-full flex justify-center items-center absolute bg-black/80 opacity-0 hover:opacity-100"
                       >
