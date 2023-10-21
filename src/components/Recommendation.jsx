@@ -38,11 +38,12 @@ const Recommendation = ({ type }) => {
           disableRight ? "text-[#7d8185]/80" : ""
         } select-none right-2 top-[45%] text-[2rem] absolute cursor-pointer z-10 hidden group-hover:block`}
       />
-      <h3>
+      <h3 className="flex justify-between">
         Recommedations:{" "}
         <Link
+          onClick={() => window.scrollTo(0, 0)}
           to={type === "movie" ? "/allmovies" : "/allseries"}
-          className="text-[1.1rem] pt-3 text-[var(--main-color)] md:text-[1.2rem]"
+          className="text-[1.1rem] text-[var(--main-color)] md:text-[1.2rem]"
         >
           see more
         </Link>

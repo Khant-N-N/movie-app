@@ -64,7 +64,7 @@ const AccountPage = () => {
             <h4 className="whitespace-nowrap mb-3">Please Confirm to LogOut</h4>
             <span
               onClick={() => setOut(false)}
-              className="border rounded px-3 py-2 mx-2 cursor-pointer bg-[var(--main-color)] hover:text-black/80"
+              className="border rounded px-3 py-2 mx-2 cursor-pointer border-[var(--main-color)] hover:text-black/80"
             >
               Cancel
             </span>

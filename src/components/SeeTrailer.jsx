@@ -12,12 +12,12 @@ const SeeTrailer = ({ type, watch, setWatch }) => {
       id="trailer"
       className={`${
         watch ? "scale-100" : "scale-0"
-      } w-[90%] transition-all md:w-[50%] max-h-[27rem] overflow-scroll z-[9] p-7 rounded absolute bg-black/90 top-[25%] left-[4%] md:left-[10%]`}
+      } w-[90%] transition-all md:w-[50%] max-h-[27rem] overflow-scroll z-[9] p-7 rounded absolute bg-black/90 top-[25%] left-[4%] md:left-[30%] scrollbar-hide`}
     >
       <div className="relative">
         <FaX
           onClick={() => setWatch(false)}
-          className="absolute top-[-1rem] right-0"
+          className="absolute top-[-1rem] right-0 cursor-pointer hover:text-[var(--main-color)]"
         />
       </div>
       <h3 className="text-center mb-3">Click Links to see Videos</h3>

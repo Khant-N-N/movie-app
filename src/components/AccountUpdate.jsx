@@ -98,8 +98,9 @@ const AccountUpdate = ({ update, setUpdate }) => {
       />
       <div className="my-3">
         <button
+          type="button"
           onClick={() => setUpdate(false)}
-          className="border rounded p-3 mx-2 cursor-pointer bg-[var(--main-color)] hover:text-black/80"
+          className="border rounded p-3 mx-2 cursor-pointer border-[var(--main-color)] hover:text-black/80"
         >
           Cancel
         </button>
