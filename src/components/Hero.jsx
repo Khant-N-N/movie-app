@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import requests from "../Request";
-import { FaC } from "react-icons/fa6";
+import { FaC, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 import useAxios from "../hooks/useAxios";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { movies, loading } = useAxios(requests.requestPopular("movie"));
+  const [counter, setCounter] = useState(1);
 
-  const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+  const shuffleMovie = () => {
+    setCounter(Math.floor(Math.random() * movies.length));
+  };
+
+  const randomMovie = movies[counter];
 
   return (
     <div className="flex justify-center items-center mb-[1.5rem]">
@@ -17,7 +22,7 @@ const Hero = () => {
           <FaC className="animate-spin text-center text-[2rem]" />
         </p>
       ) : (
-        <div className="h-[80vh] w-full relative">
+        <div id="hero" className="h-[80vh] w-full relative">
           <div className="w-full h-full">
             <div className="w-full h-[80vh] absolute bg-gradient-to-r from-[var(--bg-color)] to-black/40"></div>
 
@@ -51,6 +56,14 @@ const Hero = () => {
               </Link>
             </div>
           </div>
+          <FaChevronLeft
+            onClick={shuffleMovie}
+            className="absolute left-2 top-1/2 text-[var(--main-color)] shadow-2xl text-xl"
+          />
+          <FaChevronRight
+            onClick={shuffleMovie}
+            className="absolute right-2 top-1/2 text-[var(--main-color)] shadow-2xl text-xl"
+          />
         </div>
       )}
     </div>
