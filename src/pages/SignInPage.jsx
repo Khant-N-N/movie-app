@@ -31,10 +31,15 @@ const SignInPage = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="flex gap-2 rounded shadow-[1px_2px_2px_#111] border border-[var(--main-color)] max-w-[500px] md:w-[50%] w-[90%] h-[70%] flex-col justify-center items-center"
+          className="flex gap-2 rounded shadow-[1px_2px_2px_#111] border border-[var(--main-color)] max-w-[500px] md:w-[50%] w-[90%] h-[80%] flex-col justify-center items-center"
         >
           <p className="text-[2rem] font-caveat text-center mb-[2rem]">
             Welcome back!
+          </p>
+          <p className="flex flex-col">
+            Demo Acc:
+            <span>Email : khant@khant.com</span>
+            <span>Pass : 123456</span>
           </p>
           <div className="mb-3 text-[#f04141]">{error && error}</div>
           <input

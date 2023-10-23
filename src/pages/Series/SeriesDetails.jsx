@@ -33,8 +33,8 @@ const SeriesDetails = () => {
   const toastAlert = () => {
     toast(
       save
-        ? "➖ removed (" + detail?.title + ") from favourite"
-        : "➕ Saved (" + detail?.title + ") to favourite",
+        ? "➖ removed (" + detail?.name + ") from favourite"
+        : "➕ Saved (" + detail?.name + ") to favourite",
       {
         position: "bottom-center",
         autoClose: 1000,
